@@ -1,8 +1,7 @@
 var keys = require("keys"),
     isNullOrUndefined = require("is_null_or_undefined"),
     fastBindThis = require("fast_bind_this"),
-    isObjectLike = require("is_object_like"),
-    isLength = require("is_length");
+    isArrayLike = require("is_array_like");
 
 
 function filterOneArray(array, callback) {
@@ -42,5 +41,5 @@ function filterOneObject(object, callback) {
 
 module.exports = function filterOne(object, callback, thisArg) {
     callback = isNullOrUndefined(thisArg) ? callback : fastBindThis(callback, thisArg, 2);
-    return (isObjectLike(object) && isLength(object.length)) ? filterOneArray(object, callback) : filterOneObject(object, callback);
+    return isArrayLike(object) ? filterOneArray(object, callback) : filterOneObject(object, callback);
 };
