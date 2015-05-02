@@ -4,6 +4,14 @@ var keys = require("keys"),
     isArrayLike = require("is_array_like");
 
 
+module.exports = filterOne;
+
+
+function filterOne(object, callback, thisArg) {
+    callback = isNullOrUndefined(thisArg) ? callback : fastBindThis(callback, thisArg, 2);
+    return isArrayLike(object) ? filterOneArray(object, callback) : filterOneObject(object, callback);
+}
+
 function filterOneArray(array, callback) {
     var length = array.length,
         i = -1,
@@ -18,7 +26,7 @@ function filterOneArray(array, callback) {
         }
     }
 
-    return undefined;
+    return null;
 }
 
 function filterOneObject(object, callback) {
@@ -36,10 +44,5 @@ function filterOneObject(object, callback) {
         }
     }
 
-    return undefined;
+    return null;
 }
-
-module.exports = function filterOne(object, callback, thisArg) {
-    callback = isNullOrUndefined(thisArg) ? callback : fastBindThis(callback, thisArg, 2);
-    return isArrayLike(object) ? filterOneArray(object, callback) : filterOneObject(object, callback);
-};
