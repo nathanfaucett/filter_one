@@ -21,9 +21,9 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
-    "is_array_like": "nathanfaucett/is_array_like",
-    "is_null_or_undefined": "nathanfaucett/is_null_or_undefined",
-    "fast_bind_this": "nathanfaucett/fast_bind_this",
-    "keys": "nathanfaucett/keys"
+    "is_array_like": "git://github.com/nathanfaucett/is_array_like",
+    "is_null_or_undefined": "git://github.com/nathanfaucett/is_null_or_undefined",
+    "fast_bind_this": "git://github.com/nathanfaucett/fast_bind_this",
+    "keys": "git://github.com/nathanfaucett/keys"
   }
 }
