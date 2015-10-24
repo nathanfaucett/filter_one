@@ -1,4 +1,4 @@
 filterOne
 =======
 
-filterOne for the browser and node.js
+filter one for the browser and node.js
